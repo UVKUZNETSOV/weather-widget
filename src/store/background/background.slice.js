@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const backgroundSlice = createSlice({
   name: 'background',
   initialState: {
-    isDay: 1,
+    isDay: null,
   },
   reducers: {
     setBackgroundColor: (state, action) => {
