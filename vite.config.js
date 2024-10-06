@@ -11,9 +11,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'My PWA App',
+        name: 'Weather widget',
         short_name: 'PWA App',
-        description: 'My awesome Progressive Web App!',
+        description: 'An PWA app for knowing what to wear before going out',
         theme_color: '#ffffff',
         icons: [
           {
