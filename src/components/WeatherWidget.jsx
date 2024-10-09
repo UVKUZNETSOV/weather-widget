@@ -25,7 +25,6 @@ const WeatherWidget = () => {
   useEffect(() => {
     axios
       .get(apiKey)
-      .catch((error, reject) => {console.error(error); reject})
       .then((res) => res.data)
       .then((data) => {
         setCountry(data.location.country);
