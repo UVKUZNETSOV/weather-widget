@@ -18,8 +18,9 @@ const WeatherWidget = () => {
   const [degrees, setDegrees] = useState(0);
   const [icon, setIcon] = useState();
   const [isLoaded, setIsloaded] = useState(false);
+  const [chanceOfRain, setChanceOfRain] = useState(0);
 
-  const apiKey = useApikey("https://api.weatherapi.com/v1/current.json?", city);
+  const apiKey = useApikey("https://api.weatherapi.com/v1/forecast.json?", city);
 
   useEffect(() => {
     axios
@@ -31,7 +32,9 @@ const WeatherWidget = () => {
         setDegrees(data.current.temp_c);
         setIcon(data.current.condition.icon);
         setIsloaded(true);
+        setChanceOfRain(data.forecast.forecastday[0].day.daily_chance_of_rain);
       })
+    
   }, [apiKey]);
 
   const data = {
@@ -39,7 +42,7 @@ const WeatherWidget = () => {
     datasets: [
       {
         label: "Temperature",
-        data: [6, 94],
+        data: [chanceOfRain, 100 - chanceOfRain],
         backgroundColor: ["#4D99E7", "#FFFFFF"],
         borderWidth: 0,
         borderRadius: 20,
