@@ -4,7 +4,6 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/weather-widget/",
   plugins: [
     react(),
     VitePWA({
@@ -36,4 +35,8 @@ export default defineConfig({
       },
     }),
   ],
+  server: {
+    host: true,
+    port: 3001,
+  },
 })
