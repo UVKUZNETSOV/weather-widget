@@ -3,6 +3,6 @@ version: "3.8"
 services:
   vite-prod:
     build: .
-    container_name: icecream-frontend
+    container_name: weather-widget
     ports:
       - "3001:8080"
